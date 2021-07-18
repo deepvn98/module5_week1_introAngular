@@ -1,0 +1,14 @@
+<h1>Wellcome to About</h1>
+<h1>Xin chào {{name}} </h1>
+<span>tuổi của bạn : {{age}}</span>
+<br>
+<div>
+    <span *ngIf="age >= 18; then condition1 else condition2" class="overage">
+    </span>
+</div>
+<br>
+<ng-template #condition1 class="overage"> Bạn đủ tuổi Bóc Lịch</ng-template>
+<ng-template #condition2 class="underage"> Bạn đủ tuổi vào trại giáo dưỡng</ng-template>
+<br>
+<button (click)="tangTuoi()">Tăng tuổi</button>
+<br><br>

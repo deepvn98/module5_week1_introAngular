@@ -1,0 +1,39 @@
+<div ><p appColor>home works!</p>
+    <label for="">
+        <span>Nhập tên của bạn</span><br>
+        <input type="text" [(ngModel)]="name" placeholder="Name">
+    </label><br><br>
+    <label for="">
+        <span>Nhập tuổi của bạn</span><br>
+        <input type="text" [(ngModel)]="age" placeholder="age">
+    </label>
+    
+    <h1 appColor>Xin chào {{name}} </h1>
+    <span>tuổi của bạn : {{age}}</span>
+    <br>
+    <div>
+        <span *ngIf="age  >= 18; then condition1 else condition2" appColor class="overage">
+        </span>
+    </div>
+    <br>
+    <ng-template #condition1 class="overage" > Bạn đủ tuổi Bóc Lịch</ng-template>
+    <ng-template #condition2 class="underage"> Bạn đủ tuổi vào trại giáo dưỡng</ng-template>
+    <br>
+    <button (click)="tangTuoi()" appColor>Tăng tuổi</button>
+    <br><br>
+    <h3 appColor>Danh sách Các đối tượng tình nghi: </h3>
+    <div *ngFor="let listElement of listElements">
+        <li>{{listElement}}</li>
+    </div>
+    <br>
+    <input type="text" [(ngModel)]="doituong" >
+    <button (click)="createElement(doituong)" appColor>thêm đối tượng</button>
+    <br><br>
+    
+    <div>
+        <select name="" id="" appColor>
+            <option value="" *ngFor="let listElement of listElements" >{{listElement}}</option>
+        </select>
+    </div>
+    <br>
+    </div>

@@ -1,0 +1,30 @@
+<h1>Điền đầy đủ thông tin vào form</h1>
+<br><br>
+<div class="container">
+    <form  [formGroup]="ProfileForm" (ngSubmit)=" onSubmit()"> 
+    <fieldset with="40px" appColor>
+          <legend>Information</legend>
+    <div>
+        <label >You Name <br>
+            <input formControlName="name" id="name"  type="text" placeholder="Name" required>
+        </label><span *ngIf="ProfileForm.controls.name.invalid"> (Không để trống*)</span>       
+    </div><br>
+    <div>
+        <label >UserName
+        </label> <br>
+        <input formControlName="useName" id="useName"  type="text" placeholder="UseName" required>
+        <span *ngIf="ProfileForm.controls.useName.invalid"> (Không để trống*)</span>
+    </div><br>
+    <div>
+        <label >Password</label><br>
+        <input formControlName="password" id="password"  type="text" placeholder="Password" required>
+      <span *ngIf="ProfileForm.controls.password.invalid"> (Không để trống*)</span>
+    </div><br>
+    <div>
+        <button type="submit"  appColor [disabled]="!ProfileForm.valid" >Submit</button>
+    </div>
+    </fieldset>
+</form>
+</div>
+<br><br><br>
+
